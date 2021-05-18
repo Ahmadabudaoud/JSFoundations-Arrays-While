@@ -91,11 +91,12 @@ function secondHalfOfArrayIfItIsEven(fruits) {
  * - Use string method .endsWith()
  */
 function youGottaCalmDown(shout) {
-  let result = shout;
-  while (result.endsWith("!")) {
-    result = result.slice(0, -1);
-  }
-  return result + "!";
+  if (shout.endsWith("!")) {
+    while (shout.endsWith("!")) {
+      shout = shout.slice(0, -1);
+    }
+    return shout + "!";
+  } else return shout;
 }
 
 module.exports = {
